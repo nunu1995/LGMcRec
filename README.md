@@ -5,19 +5,33 @@
 </p>
 
 ## **Overview**
-In the digital era of personalization, multi-criteria recommender systems (MCRSs) have emerged as a critical tool for capturing the multidimensional nature of user preferences by leveraging multiple evaluation criteria rather than relying solely on single overall ratings. Despite their potential, existing MCRSs face significant challenges, including graph sparsity, lack of criterion interdependency modeling, and the underutilization of semantic information for recommendation tasks.
+In the digital era of personalization, multi-criteria recommender systems (MCRSs) have emerged as a critical tool for capturing the multidimensional nature of user preferences by leveraging multiple evaluation criteria rather than relying solely on single overall ratings. Despite their potential, existing MCRSs face significant challenges, including graph sparsity, lack of criterion interdependency modeling, and the underutilization of semantic information for recommendation tasks. To address these limitations, we present **LGMcRec** (Large Language Models-augmented Light Graph Model for Multi-criteria Recommendation), a novel framework that integrates the strengths of **graph neural networks (GNNs)** and **large language models (LLMs)** to enhance representation learning and recommendation performance in multi-criteria settings.
 
-To address these limitations, we present **LGMcRec** (Large Language Models-augmented Light Graph Model for Multi-criteria Recommendation), a novel framework that integrates the strengths of **graph neural networks (GNNs)** and **large language models (LLMs)** to enhance representation learning and recommendation performance in multi-criteria settings.
+## **Project Structure**
 
-Key innovations of LGMcRec include:
-1. **Tripartite Graph Construction**:
-   - Captures **user-item interactions**, **item-criterion associations**, and **criterion interdependencies** within a unified structure, mitigating issues of sparsity and unmodeled correlations.
-   
-2. **Enhanced Embedding Learning**:
-   - Extends the **LightGCN architecture** to learn robust graph-based embeddings.
-   - Enriches these embeddings through **semantic alignment** with LLM-generated embeddings derived from textual user and item profiles.
-
-3. **Contrastive Learning Integration**:
-   - Bridges the gap between graph-based and LLM-based embeddings by maximizing mutual information between the two embedding spaces, resulting in cohesive and comprehensive user and item representations.
-
-Experimental results on three multi-criteria datasets demonstrate that LGMcRec significantly outperforms state-of-the-art methods, establishing it as a promising solution for modern recommendation tasks. The implementation code and datasets will be made publicly available to ensure reproducibility and facilitate further research in this area.
+```plaintext
+├── config/                       # Configuration files and utilities
+├── data/                         # Data preprocessing and handling
+│   ├── preprocess.py             # Preprocessing raw multi-criteria data
+│   ├── data_process.py           # Splitting data and user-item mappings
+├── embedding/                    # Embedding generation and alignment
+│   ├── generate_profile.py       # Generates user profiles based on prompts
+│   ├── generate_emb.py           # Generates user embeddings
+├── model/                        # Recommendation models
+│   ├── mclightgcn.py             # MCLightGCN implementation
+│   ├── attention.py              # Attention mechanisms for embedding alignment
+├── train/                        # Training and evaluation utilities
+│   ├── trainer.py                # Initializes and handles training
+├── utils/                        # Utility functions
+│   ├── graph_utils.py            # Graph construction and normalization utilities
+│   ├── seed_utils.py             # Seed initialization for reproducibility
+│   ├── logging_utils.py          # Logging setup
+├── unprocess_dataset/            # Raw datasets for preprocessing
+├── User_TA/                      # Outputs of the pipeline
+│   ├── user_prompts_TA.json      # Generated user prompts
+│   ├── user_profiles_TA.json     # Generated user profiles
+│   ├── user_profiles_TA.pkl      # Generated user embeddings
+├── main.py                       # Main entry point for the pipeline
+├── requirements.txt              # Python dependencies
+└── README.md                     # Project documentation
+```
