@@ -49,3 +49,38 @@ The project requires the following Python libraries:
 - [torch](https://pytorch.org/) (PyTorch for deep learning)
 - [recbole](https://recbole.io/) (for recommendation system utilities)
 - [openai](https://openai.com/) (to access OpenAI's API for embedding generation)
+
+---
+
+## **Usage**
+
+### **Run the Full Pipeline**
+Execute the entire pipeline by running `main.py`:
+```bash
+python main.py
+```
+
+This will:
+1. Preprocess the raw dataset and construct the multi-criteria graph.
+2. Generate user profiles and embeddings.
+3. Train the recommendation model and evaluate its performance.
+
+### **Customize Configurations**
+Modify `config.py` to customize:
+- Dataset paths
+- Embedding sizes
+- Training hyperparameters
+
+### **Output**
+Processed data and results are stored in the specified output directory (e.g., `User_TA/`).
+
+---
+
+## **Example Dataset**
+
+Place your dataset in the `unprocess_dataset/` folder. For example:
+- `multi_TA.csv`: Raw multi-criteria dataset containing columns like `UserID`, `ItemID`, and criteria ratings.
+
+Refer to `preprocess.py` for the expected dataset structure and preprocessing logic.
+
+---
