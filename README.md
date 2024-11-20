@@ -1,7 +1,7 @@
 # LGMcRec: Large Language Models-augmented Light Graph Model for Multi-criteria Recommendation
 
 <p align="center">
-<img src="LGMcRec.png" alt="LGMcRec" width=75%>
+<img src="LGMcRec.png" alt="LGMcRec" width=100%>
 </p>
 
 ## **Overview**
@@ -35,3 +35,17 @@ In the digital era of personalization, multi-criteria recommender systems (MCRSs
 ├── requirements.txt              # Python dependencies
 └── README.md                     # Project documentation
 ```
+
+## **Prerequisites**
+
+Before setting up the project, ensure you have the following installed:
+
+### **System Requirements**
+- Python **3.8+**
+- **CUDA** (if running on GPU, ensure you have a compatible NVIDIA driver installed)
+
+### **Libraries**
+The project requires the following Python libraries:
+- [torch](https://pytorch.org/) (PyTorch for deep learning)
+- [recbole](https://recbole.io/) (for recommendation system utilities)
+- [openai](https://openai.com/) (to access OpenAI's API for embedding generation)
