@@ -4,8 +4,12 @@
 <img src="LGMcRec.png" alt="LGMcRec" width=100%>
 </p>
 
+---
+
 ## **Overview**
 In the digital era of personalization, multi-criteria recommender systems (MCRSs) have emerged as a critical tool for capturing the multidimensional nature of user preferences by leveraging multiple evaluation criteria rather than relying solely on single overall ratings. Despite their potential, existing MCRSs face significant challenges, including graph sparsity, lack of criterion interdependency modeling, and the underutilization of semantic information for recommendation tasks. To address these limitations, we present **LGMcRec** (Large Language Models-augmented Light Graph Model for Multi-criteria Recommendation), a novel framework that integrates the strengths of **graph neural networks (GNNs)** and **large language models (LLMs)** to enhance representation learning and recommendation performance in multi-criteria settings.
+
+---
 
 ## **Project Structure**
 
@@ -36,6 +40,8 @@ In the digital era of personalization, multi-criteria recommender systems (MCRSs
 └── README.md                     # Project documentation
 ```
 
+---
+
 ## **Prerequisites**
 
 Before setting up the project, ensure you have the following installed:
@@ -59,11 +65,6 @@ Execute the entire pipeline by running `main.py`:
 ```bash
 python main.py
 ```
-
-This will:
-1. Preprocess the raw dataset and construct the multi-criteria graph.
-2. Generate user profiles and embeddings.
-3. Train the recommendation model and evaluate its performance.
 
 ### **Customize Configurations**
 Modify `config.py` to customize:
