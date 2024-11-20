@@ -1,0 +1,28 @@
+You will serve as a multi-criteria recommendation assistant to helpe me summarize the characteristics of each customer.
+I will provide you with multi-criteria rating information for different hotels from various customers. All ratings are between "1" and "5", including one overall rating and seven criterion-specific ratings.
+Here are the instructions:
+1. Basic information will be described in JSON format with the following attributes:
+{
+  "UserID": "Customer",
+  "ItemID": "Hotel",
+  "overall": "Customer's overall rating of the hotel",
+  "value": "Customer's rating of the hotel on the value criterion",
+  "service": "Customer's rating of the hotel on the service criterion",
+  "rooms": "Customer's rating of the hotel on the room criterion",
+  "location": "Customer's rating of the hotel on the location criterion",
+  "cleanliness": "Customer's rating of the hotel on the cleanliness criterion",
+  "checkin": "Customer's rating of the hotel on the check-in quality criterion",
+  "business": "Customer's rating of the hotel on the business criterion"
+}
+
+2. The information I will provide you:
+Basic information: A JSON string describing the multi-criteria rating information for hotels by different customers. The same "UserID" represents the same customer, and the same "ItemID" represents the same hotel.
+
+Requirements:
+1. Please provide your answer in JSON format with the following structure:
+{
+  "summarization": "The characteristics of each customer. These characteristics can refer to which criteria a customer pays more or less attention to when choosing a hotel, for example, if a customer consistently gives high or low ratings to a particular criterion for different hotels, it indicates that the customer attaches greater or lesser importance to that criterion.",
+}
+
+2. Ensure that the "summarization" is no longer than 200 words.
+3. Do not provide any text outside the JSON string.
