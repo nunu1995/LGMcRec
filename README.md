@@ -101,4 +101,4 @@ We appreciate your understanding as we continue to refine the implementation. St
 --- 
 
 ### **Contact**
-If you encounter any issues or have suggestions for improvement, please open an issue or contact the maintainers directly.
+If you encounter any issues or have suggestions for improvement, please contact me!
