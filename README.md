@@ -85,3 +85,20 @@ Place your dataset in the `unprocess_dataset/` folder. For example:
 Refer to `preprocess.py` for the expected dataset structure and preprocessing logic.
 
 ---
+
+## **Code Under Development**
+
+While this repository provides the core functionalities for multi-criteria recommendation systems, **the current codebase is still under development** and may require further refinement. We are actively working on these improvements and aim to provide a more robust and user-friendly codebase in future updates. 
+
+### **Future Updates**
+Our team is committed to iteratively enhancing the code and functionality. Updates will be uploaded periodically to this repository, including:
+- Bug fixes and performance optimizations.
+- New features and experimental modules.
+- Extended documentation and example use cases.
+
+We appreciate your understanding as we continue to refine the implementation. Stay tuned for updates, and feel free to reach out with feedback or suggestions to help us improve.
+
+--- 
+
+### **Contact**
+If you encounter any issues or have suggestions for improvement, please open an issue or contact the maintainers directly.
