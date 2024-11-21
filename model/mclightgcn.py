@@ -38,6 +38,19 @@ class MCLightGCN(GeneralRecommender):
         self._init_weights()
 
     def _init_model_params(self, config, dataset, n_cri, co_matrix, user_item_criterion_ratings):
+         """
+        Initialize model parameters and load pre-trained embeddings.
+
+        Args:
+            config (Config): Configuration parameters.
+            dataset (Dataset): Dataset object.
+            n_cri (int): Number of criteria.
+            co_matrix (array): Co-occurrence matrix for criteria.
+            user_item_criterion_ratings (dict): User-item-criterion ratings.
+
+        Returns:
+            None
+        """
 
         self.n_cri = n_cri
         self.co_matrix = co_matrix
@@ -52,6 +65,12 @@ class MCLightGCN(GeneralRecommender):
         self.pretrain_user_embeddings, self.pretrain_item_embeddings = self._load_pretrained_embeddings()
 
     def _load_pretrained_embeddings(self):
+          """
+        Load pre-trained embeddings for users and items.
+
+        Returns:
+            tuple: Pre-trained user and item embeddings as tensors.
+        """
 
         user_path = 'user_profiles_np_TA.pkl'
         item_path = 'item_profiles_np_TA.pkl'
@@ -65,6 +84,12 @@ class MCLightGCN(GeneralRecommender):
         return pretrain_user_embeddings, pretrain_item_embeddings
 
     def _build_model(self):
+          """
+        Build the MCLightGCN model with embedding layers and attention mechanisms.
+
+        Returns:
+            None
+        """
 
         self.user_embedding = nn.Embedding(self.n_users, self.latent_dim)
         self.item_embedding = nn.Embedding(self.n_items, self.latent_dim)
@@ -79,6 +104,12 @@ class MCLightGCN(GeneralRecommender):
         self.mf_loss = BPRLoss()
 
     def _construct_graph(self):
+           """
+        Construct and normalize the adjacency matrix for the graph.
+
+        Returns:
+            SparseTensor: Normalized adjacency matrix.
+        """
 
         return normalize_adjacency_matrix(self.n_users, self.n_items, self.n_cri, self.interaction_matrix, self.co_matrix)
 
