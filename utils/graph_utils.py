@@ -4,6 +4,19 @@ import torch
 
 
 def construct_co_occurrence_matrix(data, criteria, threshold=0.6):
+    """
+    Construct a co-occurrence matrix for criteria based on a threshold.
+
+    Args:
+        data (DataFrame): Input dataset containing user ratings for various criteria.
+        criteria (list of str): List of criteria columns in the dataset.
+        threshold (float): Threshold above which a criterion is considered "positive."
+
+    Returns:
+        numpy.ndarray: Co-occurrence matrix of size [n_criteria, n_criteria], where each element
+                       (i, j) represents the conditional probability of criterion j being
+                       positive given that criterion i is positive.
+    """
 
     n_criteria = len(criteria)
     co_matrix = np.zeros((n_criteria, n_criteria))
