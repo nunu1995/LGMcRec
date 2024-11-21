@@ -11,9 +11,22 @@ from attention import AttentionAlign
 
 
 class MCLightGCN(GeneralRecommender):
+     """
+    MCLightGCN: A light graph convolutional network for multi-criteria recommendations.
+    """
     input_type = InputType.PAIRWISE
 
     def __init__(self, config, dataset, n_cri, co_matrix, user_item_criterion_ratings):
+        """
+        Initialize the MCLightGCN model.
+
+        Args:
+            config (Config): Configuration parameters.
+            dataset (Dataset): Dataset object.
+            n_cri (int): Number of criteria.
+            co_matrix (array): Co-occurrence matrix for criteria.
+            user_item_criterion_ratings (dict): User-item-criterion ratings.
+        """
         super(MCLightGCN, self).__init__(config, dataset)
 
         self._init_model_params(config, dataset, n_cri, co_matrix, user_item_criterion_ratings)
