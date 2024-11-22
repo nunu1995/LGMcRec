@@ -31,10 +31,6 @@ In the digital era of personalization, multi-criteria recommender systems (MCRSs
 │   ├── seed_utils.py             # Seed initialization for reproducibility
 │   ├── logging_utils.py          # Logging setup
 ├── unprocess_dataset/            # Raw datasets for preprocessing
-├── User_TA/                      # Outputs of the pipeline
-│   ├── user_prompts_TA.json      # Generated user prompts
-│   ├── user_profiles_TA.json     # Generated user profiles
-│   ├── user_profiles_TA.pkl      # Generated user embeddings
 ├── main.py                       # Main entry point for the pipeline
 ├── requirements.txt              # Python dependencies
 └── README.md                     # Project documentation
